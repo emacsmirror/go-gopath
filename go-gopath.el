@@ -27,6 +27,7 @@
 ;; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ;; SOFTWARE.
 
+;;; Code:
 
 (defun go-gopath-gb-env-line (name)
   (unless (eq buffer-file-name nil)
@@ -61,6 +62,7 @@
         (concat expanded-gopath ":" expanded-vendor-gopath)
       expanded-gopath)))
 
+;;;###autoload
 (defun go-gopath-set-gopath (gopath)
   (interactive
    (list
@@ -69,3 +71,4 @@
 
 
 (provide 'go-gopath)
+;;; go-gopath.el ends here
