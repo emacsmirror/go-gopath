@@ -2,6 +2,7 @@
 
 ;; Author: Andrew Kirilenko <andrew.kirilenko.main@gmail.com>
 ;; URL: http://github.com/iced/go-gopath/
+;; Package-Requires: ((cl-lib "0.5"))
 
 ;;; License
 
@@ -29,10 +30,12 @@
 
 ;;; Code:
 
+(require 'cl-lib)
+
 (defun go-gopath-gb-env-line (name)
   (unless (eq buffer-file-name nil)
     (let ((gbe-env (split-string (shell-command-to-string "gb env") "\n")))
-      (car (remove-if-not (lambda (e) (string-prefix-p name e)) gbe-env)))))
+      (cl-find-if (lambda (e) (string-prefix-p name e)) gbe-env))))
 
 (defun go-gopath-gb-env-value (name)
   (let ((env-line (go-gopath-gb-env-line name)))
