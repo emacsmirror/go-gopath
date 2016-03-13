@@ -1,3 +1,5 @@
+[![MELPA](https://melpa.org/packages/go-gopath-badge.svg)](https://melpa.org/#/go-gopath)
+
 # go-gopath
 
 Will guess GOPATH using gb and projectile.
