@@ -62,7 +62,7 @@
   (let* ((expanded-gopath (expand-file-name "." gopath))
          (expanded-vendor-gopath (expand-file-name "vendor" gopath)))
     (if (file-exists-p expanded-vendor-gopath)
-        (concat expanded-gopath ":" expanded-vendor-gopath)
+        (concat expanded-gopath path-separator expanded-vendor-gopath)
       expanded-gopath)))
 
 ;;;###autoload
